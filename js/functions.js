@@ -21,6 +21,13 @@ $(window).on("load", function () {
 });
 
 
+// Scroll to Div
+function scrollToDiv(divId) {
+    const targetDiv = document.getElementById(divId);
+    targetDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+
 jQuery($ => {
     "use strict";
     let $window = $(window);
