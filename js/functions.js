@@ -21,7 +21,7 @@ $(window).on("load", function () {
 });
 
 
-jQuery($=> {
+jQuery($ => {
     "use strict";
     let $window = $(window);
     let body = $("body");
@@ -34,13 +34,13 @@ jQuery($=> {
         let userEmail = $('#email1').val();
         let userMessage = $('#message1').val();
         let result;
-        if(this.id === 'submit_btn'){
+        if (this.id === 'submit_btn') {
             result = $('#result');
             userMessage = $('#companyName').val();
             userName = $('#userName').val();
             userEmail = $('#email').val();
         }
-        else{
+        else {
             result = $('#result1');
         }
         //simple validation at client's end
@@ -152,15 +152,15 @@ jQuery($=> {
     $("a.pagescroll").on("click", function (event) {
         event.preventDefault();
         let action = $(this.hash).offset().top;
-        if($(this).hasClass('scrollupto')){
-            action-=45;
+        if ($(this).hasClass('scrollupto')) {
+            action -= 45;
         }
         $("html,body").animate({
             scrollTop: action
         }, 100);
-       // $(".navbar-nav li a").removeClass("active");
-       // $(this).addClass('active');
-       
+        // $(".navbar-nav li a").removeClass("active");
+        // $(this).addClass('active');
+
     });
 
     /* ------- navbar menu Position dynamically ------- */
@@ -262,7 +262,7 @@ jQuery($=> {
                     $("#close_side_menu").fadeOut(200);
                     $tooltip.tooltipster('close');
                     $(() => {
-                        setTimeout(()=> {
+                        setTimeout(() => {
                             $('.sideNavPages').removeClass('show');
                             $('.fas').removeClass('rotate-180');
                         }, 400);
@@ -281,7 +281,7 @@ jQuery($=> {
 
 
     /* ----- Full Screen ----- */
-    let resizebanner = ()=> {
+    let resizebanner = () => {
         let $fullscreen = $(".full-screen");
         $fullscreen.css("height", $window.height());
         $fullscreen.css("width", $window.width());
@@ -545,13 +545,13 @@ jQuery($=> {
      Parallax And responsive plugins initialize
       ====================================== */
     let $tooltip = $('.tooltip');
-    $(()=> {
+    $(() => {
         $tooltip.tooltipster({
             plugins: ['follower'],
             anchor: 'bottom-right',
             offset: [0, 0],
             animation: 'fade',
-            content:'Click Here To Close or Press ESC!',
+            content: 'Click Here To Close or Press ESC!',
             delay: 20,
             theme: 'tooltipster-light',
             repositionOnScroll: true,
@@ -633,7 +633,7 @@ jQuery($=> {
         }
     });
 
-    let fadeInPrice = (thisItem, priceText)=> {
+    let fadeInPrice = (thisItem, priceText) => {
         let pricingItem = $('.pricing-price');
         pricingItem.addClass('scale-price');
         setTimeout(function () {
@@ -642,10 +642,10 @@ jQuery($=> {
         }, 200);
     }
 
-    $('.pricing-item').on('mouseenter' , function(){
-       $('.pricing-item').removeClass('active');
+    $('.pricing-item').on('mouseenter', function () {
+        $('.pricing-item').removeClass('active');
         $(this).addClass('active');
-    }).on('mouseleave' , function(){
+    }).on('mouseleave', function () {
         $('.pricing-item').removeClass('active');
         $('.pricing-item.selected').addClass('active');
     });
@@ -845,7 +845,7 @@ jQuery($=> {
             },
         }
     });
-    $('.app-slider-lock-btn').on('click' , function () {
+    $('.app-slider-lock-btn').on('click', function () {
         $('.app-slider-lock').fadeToggle(600);
     });
 
@@ -1036,6 +1036,16 @@ jQuery($=> {
     $(".counters").appear(function () {
         $(".count_nums").countTo();
     });
+
+
+    /* -------copy right year maker------ */
+    let copyYearRange = new Date().getFullYear();
+    let copyTextRange = $('#year , #yearRange');
+    if (copyYearRange === 2025) {
+        copyTextRange.text(copyYearRange);
+    } else {
+        copyTextRange.text('2025-' + copyYear);
+    }
 
 
     /* -------copy right year maker------ */
@@ -1891,8 +1901,8 @@ jQuery($=> {
             disableFocusListener: false,
         }
     });
-  
 
-//    end of js
+
+    //    end of js
 });
 
